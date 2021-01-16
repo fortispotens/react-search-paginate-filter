@@ -1,38 +1,185 @@
-.App {
-  text-align: center;
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+	width: 100%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.app-container {
+	display: flex;
+	max-width: 90%;
+	margin: 0 auto;
+	flex-direction: column;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.records-control {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.data-records {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input::placeholder {
+	text-indent: 10px;
+	/* line-height: normal; */
+}
+
+.records-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.record {
+	width: 420px;
+}
+
+.record-container {
+	width: 90%;
+	margin: 0.75rem auto;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 0.7rem;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+	transition: 0.3s;
+	padding: 0.25rem 1rem;
+}
+
+.user-bio {
+	width: 100%;
+	display: flex;
+}
+
+.avatar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 40%;
+	padding-top: 0.5rem;
+}
+
+img {
+	width: 100%;
+}
+
+.avatar h2 {
+	text-align: center;
+	margin: 0.4rem 0;
+	font-size: 1rem;
+}
+
+img {
+	width: 100%;
+}
+
+.bio-item {
+	display: flex;
+	justify-content: space-between;
+	padding-top: 0.2rem;
+}
+
+.bio {
+	width: 60%;
+	padding-left: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-self: center;
+}
+
+.bio-item h2 {
+	padding-left: 1rem;
+}
+
+@media only screen and (max-width: 468px) {
+	/* For mobile devices: */
+
+	.records-control {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	input::placeholder {
+		text-indent: 10px;
+		/* line-height: normal; */
+	}
+
+	.paginate-bar {
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		font-size: 1rem;
+	}
+
+	.record {
+		width: 100%;
+	}
+
+	.record-container {
+		margin: 0.75rem auto;
+		font-family: Arial, Helvetica, sans-serif;
+		/* font-size: 0.6rem; */
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		transition: 0.3s;
+		padding: 0.5rem 1rem;
+		background: linear-gradient(135deg, #e6aa67 0%, #adf882 100%);
+	}
+
+	.flex-flat {
+		display: flex;
+	}
+
+	.user-bio {
+		width: 100%;
+		display: flex;
+	}
+
+	.avatar {
+		width: 40%;
+		margin-right: 0.75rem;
+	}
+
+	.avatar img {
+		width: 100%;
+		border-radius: 0.5rem;
+		background: linear-gradient(135deg, #f9c387 0%, #fbd789 100%);
+	}
+	.avatar h2 {
+		text-align: center;
+		margin-top: 0.5rem;
+		font-size: 0.75rem;
+	}
+
+	.bio {
+		width: 60%;
+		padding-left: 0.25rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-self: flex-start;
+	}
+	.bio-item {
+		display: flex;
+		justify-content: space-between;
+		font-size: 0.5rem;
+		padding-top: 0.25rem;
+	}
+
+	.bio-item h2 {
+		padding-left: 1rem;
+	}
 }
