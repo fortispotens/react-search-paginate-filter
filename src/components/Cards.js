@@ -33,35 +33,32 @@ const Cards = ({ data }) => {
 				/>
 			</div>
 			<div className='data-records'>
-				{data &&
-					currentRecords
-						.filter((card) =>
-							searchTerm === ''
-								? card
-								: card.FirstName.toLowerCase().includes(
-										searchTerm.toLowerCase()
-								  ) ||
-								  card.Gender.toLowerCase().includes(
-										searchTerm.toLowerCase()
-								  ) ||
-								  card.PaymentMethod.toLowerCase().includes(
-										searchTerm.toLowerCase()
-								  ) ||
-								  card.LastName.toLowerCase().includes(
-										searchTerm.toLowerCase()
-								  ) ||
-								  card.CreditCardType.toLowerCase().includes(
-										searchTerm.toLowerCase()
-								  ) ||
-								  card.CreditCardNumber.toLowerCase().includes(
-										searchTerm.toLowerCase()
-								  )
-								? card
-								: null
-						)
-						.map((card) => {
-							return <Card key={card.URL} card={card} />;
-						})}
+				{currentRecords
+					.filter((card) =>
+						searchTerm === ''
+							? card
+							: card.FirstName.toLowerCase().includes(
+									searchTerm.toLowerCase()
+							  ) ||
+							  card.Gender.toLowerCase().includes(searchTerm.toLowerCase()) ||
+							  card.PaymentMethod.toLowerCase().includes(
+									searchTerm.toLowerCase()
+							  ) ||
+							  card.LastName.toLowerCase().includes(
+									searchTerm.toLowerCase()
+							  ) ||
+							  card.CreditCardType.toLowerCase().includes(
+									searchTerm.toLowerCase()
+							  ) ||
+							  card.CreditCardNumber.toLowerCase().includes(
+									searchTerm.toLowerCase()
+							  )
+							? card
+							: null
+					)
+					.map((card) => {
+						return <Card key={card.URL} card={card} />;
+					})}
 			</div>
 		</div>
 	);
