@@ -1,75 +1,76 @@
-import React, { useState } from 'react';
+import React from 'react';
+import male from '../images/male_image.png';
+import female from '../images/female_image.png';
+import PreferNotToSay from '../images/prefer_not_to_say.png';
 
-import CardRecords from './CardRecords';
-import Pagination from '../Pagination';
-import SearchBox from '../SearchBox';
-
-const Card = ({ data }) => {
-	const [searchTerm, setSearchTerm] = useState('');
-	const [currentPage, setCurrentPage] = useState(1);
-	const [recordsPerPage] = useState(20);
-
-	// Get current records
-	const indexOfLastRecord = currentPage * recordsPerPage;
-	const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-	const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
-
-	// Change page
-	const paginate = (pageNumber) => setCurrentPage(pageNumber);
-
+const Card = ({ card }) => {
 	return (
-		<div className='app-container'>
-			<div className='records-control'>
-				<SearchBox
-					className='search'
-					searchTerm={searchTerm}
-					setSearchTerm={setSearchTerm}
-					onChange={(event) => setSearchTerm(event.target.value)}
-				/>
-				<Pagination
-					totalRecords={data.length || currentRecords.length}
-					recordsPerPage={recordsPerPage}
-					paginate={paginate}
-				/>
-			</div>
-			<div className='data-records'>
-				{currentRecords
-					.filter((card) =>
-						// {
-						// 	if (searchTerm === '') {
-						// 		return card;
-						// 	} else if (
-						// 		card.FirstName.toLowerCase().match(searchTerm.toLowerCase()) ||
-						// 		card.Gender.toLowerCase().match(searchTerm.toLowerCase()) ||
-						// 		card.PaymentMethod.toLowerCase().match(
-						// 			searchTerm.toLowerCase()
-						// 		) ||
-						// 		card.LastName.toLowerCase().match(searchTerm.toLowerCase()) ||
-						// 		card.CreditCardType.toLowerCase().match(searchTerm.toLowerCase()) ||
-						// 		card.CreditCardNumber.toLowerCase().match(searchTerm.toLowerCase())
-						// 	)
-						// 		return card;
-						// })
-						(searchTerm === '') ?
-							card : 
-								card.FirstName.toLowerCase().match(searchTerm.toLowerCase()) ||
-								card.Gender.toLowerCase().match(searchTerm.toLowerCase()) ||
-								card.PaymentMethod.toLowerCase().match(
-									searchTerm.toLowerCase()
-								) ||
-								card.LastName.toLowerCase().match(searchTerm.toLowerCase()) ||
-								card.CreditCardType.toLowerCase().match(
-									searchTerm.toLowerCase()
-								) ||
-								card.CreditCardNumber.toLowerCase().match(
-									searchTerm.toLowerCase()
-								)
-							? card : null
-						
-					)
-					.map((card) => {
-						return <CardRecords key={card.URL} card={card} />;
-					})}
+		<div key={card.URL} className='record'>
+			<div className='record-container'>
+				<div className='user-bio'>
+					<div className='avatar'>
+						<img
+							src={
+								card.Gender === 'Female'
+									? female
+									: card.Gender === 'Male'
+									? male
+									: PreferNotToSay
+							}
+							alt='User Avatar'
+						/>
+						<h2>{`${card.FirstName} ${card.LastName}`}</h2>
+					</div>
+					<div className='bio'>
+						<div className='bio-item'>
+							<span>Username: </span>
+							<span>{card.UserName.toLowerCase()}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Email: </span>
+							<span>{card.Email.toLowerCase()}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Gender: </span>
+							<span>{card.Gender}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Location: </span>
+							<span>
+								<a
+									href={`https://www.google.com/maps/@${card.Latitude},${card.Longitude}`}
+								>
+									My Location
+								</a>
+							</span>
+						</div>
+						<div className='bio-item'>
+							<span>Website: </span>
+							{card.DomainName.toLowerCase()}
+							<a href={`${card.URL}`}>My Website</a>
+						</div>
+						<div className='bio-item'>
+							<span>Payment Method: </span>
+							<span>{card.PaymentMethod}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Creditcard Number: </span>
+							<span>{card.CreditCardNumber}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Creditcard Type: </span>
+							<span>{card.CreditCardType}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Mac Address: </span>
+							<span>{card.MacAddress}</span>
+						</div>
+						<div className='bio-item'>
+							<span>Last seen: </span>
+							<span>{card.LastLogin}</span>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './app.css';
-import Card from './components/Card';
+import Cards from './components/Cards';
 
 function App() {
 	const [data, setData] = useState([]);
@@ -16,11 +16,10 @@ function App() {
 		getData();
 	}, []);
 
-
 	return (
 		<div className='mt-5'>
 			<h1 className='text-center text-primary mb-3'>User Records</h1>
-			<Card data={data} />
+			<Cards data={data} />
 		</div>
 	);
 }
