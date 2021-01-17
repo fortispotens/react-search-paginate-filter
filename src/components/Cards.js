@@ -19,7 +19,7 @@ const Cards = ({ data }) => {
 
 	return (
 		<div className='app-container bg-light'>
-			<div className='controls-container fixed-top bg-gradient-info text-light'>
+			<div className='controls-container fixed-top text-light'>
 				<div className='records-control  p-2 '>
 					<span className='app-title text-center text-light'>User Records</span>
 					<SearchBox

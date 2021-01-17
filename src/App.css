@@ -172,6 +172,40 @@ img {
 	}
 }
 
+@media (orientation: landscape) {
+	/* For mobile devices: */
+
+	.records-control {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-direction: row;
+		align-items: center;
+		font-size: 0.75rem;
+	}
+
+	.app-title {
+		font-size: 1.2rem;
+		font-weight: bold;
+		padding-bottom: 0.5rem;
+	}
+
+	input {
+		width: 270px;
+		padding: 5px;
+	}
+
+	input::placeholder {
+		text-indent: 5px;
+		font-size: 0.8rem;
+		font-weight: 100;
+	}
+
+	.data-records {
+		margin-top: 4rem;
+	}
+}
+
 @media only screen and (max-width: 468px) {
 	/* For mobile devices: */
 
@@ -189,7 +223,6 @@ img {
 
 	input {
 		width: 250px;
-		padding-left: 10px;
 	}
 
 	input::placeholder {
