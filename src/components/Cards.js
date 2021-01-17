@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import Card from './Card';
-import Pagination from '../Pagination';
-import SearchBox from '../SearchBox';
+import Pagination from './Pagination';
+import SearchBox from './SearchBox';
 
 const Cards = ({ data }) => {
 	const [searchTerm, setSearchTerm] = useState('');
