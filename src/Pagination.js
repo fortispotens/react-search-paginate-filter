@@ -14,7 +14,7 @@ const Pagination = ({ recordsPerPage, totalRecords, paginate }) => {
 						<a
 							onClick={() => paginate(number)}
 							href='!#'
-							className='active page-link'
+							className='page-link active'
 						>
 							{number}
 						</a>

@@ -18,19 +18,22 @@ const Cards = ({ data }) => {
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
 	return (
-		<div className='app-container'>
-			<div className='records-control'>
-				<SearchBox
-					className='search'
-					searchTerm={searchTerm}
-					setSearchTerm={setSearchTerm}
-					onChange={(event) => setSearchTerm(event.target.value)}
-				/>
-				<Pagination
-					totalRecords={data.length}
-					recordsPerPage={recordsPerPage}
-					paginate={paginate}
-				/>
+		<div className='app-container bg-light'>
+			<div className='controls-container fixed-top bg-gradient-info text-light'>
+				<div className='records-control  p-2 '>
+					<span className='app-title text-center text-light'>User Records</span>
+					<SearchBox
+						className='search'
+						searchTerm={searchTerm}
+						setSearchTerm={setSearchTerm}
+						onChange={(event) => setSearchTerm(event.target.value)}
+					/>
+					<Pagination
+						totalRecords={data.length}
+						recordsPerPage={recordsPerPage}
+						paginate={paginate}
+					/>
+				</div>
 			</div>
 			<div className='data-records'>
 				{currentRecords

@@ -2,10 +2,8 @@ import React from 'react';
 
 const SearchBox = ({ onChange }) => {
 	return (
-		<div>
-			<div>
-				<input type='text' placeholder='Search' onChange={onChange} />
-			</div>
+		<div className='ml-3 mr-3'>
+			<input type='text' placeholder='Search' onChange={onChange} />
 		</div>
 	);
 };

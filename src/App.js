@@ -17,8 +17,7 @@ function App() {
 	}, []);
 
 	return (
-		<div className='mt-5'>
-			<h1 className='text-center text-primary mb-3'>User Records</h1>
+		<div className='mt-4'>
 			<Cards data={data} />
 		</div>
 	);
