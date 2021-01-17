@@ -28,7 +28,7 @@ body {
 }
 
 .records-control {
-	width: 65%;
+	width: 75%;
 	margin: 0 auto;
 	display: flex;
 	align-items: center;
@@ -38,7 +38,6 @@ body {
 }
 
 .data-records {
-	/* width: 90%; */
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -172,7 +171,7 @@ img {
 	}
 }
 
-@media (orientation: landscape) {
+@media (orientation: landscape) and (min-width: 468px) and (max-width: 768px) {
 	/* For mobile devices: */
 
 	.records-control {
